@@ -24,6 +24,7 @@ func newAhvnr(input string) *ahvnr {
 // check country number for switzerland.
 func validateCountry(s []string) bool {
 	countryCode := "756" // country code 756 for switzerland
+	println("countryCode", s[0])
 	if s[0] != countryCode {
 		return false
 	} else {
@@ -33,9 +34,8 @@ func validateCountry(s []string) bool {
 
 // check ean13 checksum.
 func validateChecksum(s []string) (bool, error) {
-
 	c, err := ean.ChecksumEan13(s[0] + s[1] + s[2] + s[3])
-	println(c)
+	println("checksum", c)
 	if err != nil {
 		return false, errors.New("ean13 wrong")
 	}
@@ -54,6 +54,7 @@ func Validate(input string) (bool, error) {
 	if statusCountry {
 		statusChecksum, _ := validateChecksum(ahvnr.numberS)
 		if statusChecksum {
+			println("do checksum check")
 			ahvnr.validated = true
 			return ahvnr.validated, nil
 		}
