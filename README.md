@@ -3,7 +3,7 @@
 
 ## Overview
 
-I build this app to learn go. 
+I build this app to learn go.
 
 This is a basic layout for Go application projects. It's **`not an official standard defined by the core Go dev team`**; however, it is a set of common historical and emerging project layout patterns in the Go ecosystem. Some of these patterns are more popular than others. It also has a number of small enhancements along with several supporting directories common to any large enough real world application.
 
