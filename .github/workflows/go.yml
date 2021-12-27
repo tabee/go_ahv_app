@@ -28,4 +28,4 @@ jobs:
       run: go test ./.. -coverprofile ./coverprofile.test
 
     - name: Documentation
-      run: go doc github.com/tabee/go-ahv-app/pkg/ahvvalidieren 
+      run: go doc -all
